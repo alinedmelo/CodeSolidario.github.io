@@ -1,0 +1,323 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/08/2018, 14:25:49
+    Author     : Daniele Reis
+*/
+/*configura��o geral mobile first*/
+html{
+    height: 100%;
+}
+body{
+    /* body será dividido em grids*/
+    display: grid;
+    grid-template-areas: "header""main""footer";
+    grid-template-columns: auto; 
+    grid-template-rows: auto; 
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-family: helvetica;
+}
+.header{
+    /*header sendo colocado no grid-area*/
+    grid-area:header;
+    display: grid;
+    grid-template-areas: "logo menu";
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+    height: 10%;
+    padding-bottom: 0;
+}
+.logo{
+    grid-area:logo;  
+}
+.logo img{
+    max-width:100%;
+    max-height:100%;
+    position:absolute;
+    top: 10%;
+    left: 10%;
+    }
+.menu{
+    grid-area:menu;
+    width:100%;
+    position: relative;
+    display: inline-block;    
+}
+/*bot�o do menu responsivo*/
+.btn{ 
+    background-color:blueviolet;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:25px 20px;
+    float: right;
+}
+/*menu responsivo que aparece ao clique do bot�o*/
+.dropdown-child ul{
+    padding:10%;
+    list-style: none;
+    background-color:blueviolet;
+    width: 0%;
+    position: absolute;
+    top: 59%;
+    right: 0%;
+    padding: 0%;
+    
+}
+.dropdown-child ul li a{
+ color: #fff;
+text-decoration: none;
+display: block;
+padding: 5% 25%;
+margin-left: 10%;
+}
+.dropdown-child ul li a:hover{
+   background-color: #fff;
+   color: blueviolet;
+}
+
+.dropdown-child {
+display: none;
+
+}
+
+.show {
+display: block;
+}
+    
+.main{
+    /*main sendo colocado no grid-area*/
+    grid-area:main;
+    /*dividindo o  grid main em outro grid que irá conter os sections*/
+    display: grid;
+    grid-template-areas:"banner""sobre""projetos""contato";
+    grid-gap:1rem;
+    margin-top:55px;
+    
+}
+
+.banner{
+    grid-area:banner;
+    background-color: blueviolet;
+    
+}
+.banner img{
+    position: relative;
+    max-width: 100%;
+}
+#sobre{
+    /*section id sobre sendo colocado dentro de uma das grid area do main*/
+    grid-area:sobre;
+    display: grid;
+    grid-template-areas:"historia"
+                     "missao" "visao" "valores";
+    grid-gap:1rem;
+    padding: 20px;
+    text-align: center;
+    
+}
+h3{
+    text-align: center;
+    font-weight: 200;
+}
+h2{
+    color: #5fbd51;
+    font-weight: 200;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 2px grey;
+    text-align: center;
+}
+.historia{
+    grid-area:historia;
+}
+.missao{
+    grid-area:missao;
+    border: solid;
+    border-color:#5fbd51;
+}
+.visao{
+    grid-area:visao;
+    border: solid;
+    border-color:#5fbd51;
+}
+.valores{
+    grid-area:valores;
+    border: solid;
+    border-color:#5fbd51;
+}
+
+#projetos{
+    /*section id projetos sendo colocado dentro de uma das grid area do main*/
+    grid-area:projetos;
+    
+}
+.conteudo{
+    display: grid;
+    grid-template-columns:100%;
+}
+.projeto{
+        
+    }
+    .projeto img{
+        height: 100%;
+        width: 100%;
+    }
+#contato{
+    /*section id contato sendo colocado dentro de uma das grid area do main*/
+    grid-area:contato;
+}
+#contato form{
+    width: 50%;
+    margin:0 auto;
+    border: solid blueviolet;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#contato label{
+    width:50%;
+    color: blueviolet;
+}
+#contato input, textarea{
+    width: 50%;
+    margin-bottom: 2%;
+}
+#contato textarea{
+    height: 100px;
+}
+#contato button{
+    border: none;
+    padding: 10px 20px;
+    background-color: blueviolet;
+    color: #fff;
+}
+#contato button:hover{
+    background-color: #5fbd51;
+}
+.footer{
+    /*footer sendo colocado no grid-area*/
+    color: #fff;
+    grid-area:footer;
+    background-color:#0E0036;
+    position: relative;
+    top: 1%;
+    height: 100px;
+}
+.icons a{
+   padding: 10px;
+   text-decoration: none;
+   color: #fff;
+}
+#btn-scroll-top {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    line-height: 40px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+#btn-scroll-top:hover {
+    background: #000;
+    opacity: 1 !important;
+}
+
+#btn-scroll-top.show {
+    opacity: 0.4;
+}
+
+/*configura��o para telas de computador*/
+@media(min-width: 720px){
+    .header{
+    grid-template-areas: "logo menu menu";
+    grid-gap:1rem;
+    width: 100%;
+    
+    }
+    .menu{
+        position: relative;
+        top: -10px;
+    }
+.btn{
+		display: none;
+
+	} 
+ .dropdown-child{
+        display: inline;
+	min-width: 100%;
+        position:absolute;
+ }
+ .dropdown-child ul{
+     background-color: white;
+        float: left;
+	width: 100%;
+        position: absolute;
+        right: 40%;
+    
+        
+ }
+.dropdown-child ul li{
+    display: inline;
+    color: blueviolet;
+    float: left;
+
+}
+.dropdown-child ul li a{
+	color: blueviolet;
+	text-decoration: none;
+	padding: 18px;
+	float:left;
+        position: relative;
+
+}
+.dropdown-child ul li a:hover{
+    background-color: blueviolet;
+    color: #fff;
+}
+
+.logo img{
+    position:absolute;
+    transform:scale(1.5);
+    }
+#sobre{
+        grid-template-areas:"historia historia historia"
+                        "missao visao valores";
+    
+    }
+    .conteudo{
+    grid-template-columns:33% 33% 33%;
+    }
+    
+}
+@media(min-width: 900px){
+
+    .dropdown-child ul{
+        right: 20%;
+    }
+    
+}
+
+@media(max-width: 1000px) {
+    #contato form{
+        width: 80%;
+    }
+}

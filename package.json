@@ -1,0 +1,24 @@
+{
+  "name": "codesolidario.github.io",
+  "version": "1.1.0",
+  "description": "<h1>Site Code Solidário</h1>",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass sass/style.scss css/style.css",
+    "watch-sass": "node-sass sass/style.scss css/style.css --w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alinedmelo/CodeSolidario.github.io.git"
+  },
+  "author": "Aline Dias <aline.meldias@gmail.com> (https://alinedias.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alinedmelo/CodeSolidario.github.io/issues"
+  },
+  "homepage": "https://github.com/alinedmelo/CodeSolidario.github.io#readme",
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "node-sass": "^4.7.2"
+  }
+}
